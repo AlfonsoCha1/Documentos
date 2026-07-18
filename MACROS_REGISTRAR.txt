@@ -1,0 +1,140 @@
+Sub RegistrarFalla_Paty()
+    Dim wsReg As Worksheet, wsBD As Worksheet
+    Dim pwd As String
+    Dim fila As Long
+
+    Set wsReg = ThisWorkbook.Sheets("REGISTRO PATY")
+    Set wsBD = ThisWorkbook.Sheets("BASE DE DATOS PATY")
+    pwd = "Paty2026"
+
+    If Trim(wsReg.Range("D7").Value) = "" And Trim(wsReg.Range("D8").Value) = "" Then
+        wsReg.Range("F3").Value = "Falta NIP o No. de Parte."
+        wsReg.Range("F3").Font.Color = RGB(200, 0, 0)
+        Exit Sub
+    End If
+
+    On Error GoTo ErrorHandler
+    wsBD.Unprotect Password:=pwd
+
+    fila = wsBD.Cells(wsBD.Rows.Count, "A").End(xlUp).Row + 1
+    If fila < 5 Then fila = 5
+
+    wsBD.Cells(fila, 1).Value = Now()
+    wsBD.Cells(fila, 1).NumberFormat = "dd/mm/yyyy hh:mm"
+    wsBD.Cells(fila, 2).Value = wsReg.Range("D5").Value
+    wsBD.Cells(fila, 3).Value = wsReg.Range("D6").Value
+    wsBD.Cells(fila, 4).Value = wsReg.Range("D7").Value
+    wsBD.Cells(fila, 5).Value = wsReg.Range("D8").Value
+    wsBD.Cells(fila, 6).Value = wsReg.Range("D9").Value
+    wsBD.Cells(fila, 7).Value = wsReg.Range("D10").Value
+    wsBD.Cells(fila, 8).Value = wsReg.Range("D11").Value
+    wsBD.Cells(fila, 9).Value = wsReg.Range("D12").Value
+    wsBD.Cells(fila, 1).Locked = True
+
+    wsBD.Protect Password:=pwd, DrawingObjects:=True, Contents:=True, Scenarios:=True
+
+    wsReg.Range("D5:D12").ClearContents
+    wsReg.Range("F3").Value = "Registrado con exito - " & Format(Now(), "dd/mm/yyyy hh:mm")
+    wsReg.Range("F3").Font.Color = RGB(0, 130, 0)
+    Exit Sub
+
+ErrorHandler:
+    On Error Resume Next
+    wsBD.Protect Password:=pwd, DrawingObjects:=True, Contents:=True, Scenarios:=True
+    wsReg.Range("F3").Value = "Error al registrar: " & Err.Description
+    wsReg.Range("F3").Font.Color = RGB(200, 0, 0)
+End Sub
+
+Sub RegistrarFalla_Miriam()
+    Dim wsReg As Worksheet, wsBD As Worksheet
+    Dim pwd As String
+    Dim fila As Long
+
+    Set wsReg = ThisWorkbook.Sheets("REGISTRO MIRIAM")
+    Set wsBD = ThisWorkbook.Sheets("BASE DE DATOS MIRIAM")
+    pwd = "Miriam2026"
+
+    If Trim(wsReg.Range("D7").Value) = "" And Trim(wsReg.Range("D8").Value) = "" Then
+        wsReg.Range("F3").Value = "Falta NIP o No. de Parte."
+        wsReg.Range("F3").Font.Color = RGB(200, 0, 0)
+        Exit Sub
+    End If
+
+    On Error GoTo ErrorHandler
+    wsBD.Unprotect Password:=pwd
+
+    fila = wsBD.Cells(wsBD.Rows.Count, "A").End(xlUp).Row + 1
+    If fila < 5 Then fila = 5
+
+    wsBD.Cells(fila, 1).Value = Now()
+    wsBD.Cells(fila, 1).NumberFormat = "dd/mm/yyyy hh:mm"
+    wsBD.Cells(fila, 2).Value = wsReg.Range("D5").Value
+    wsBD.Cells(fila, 3).Value = wsReg.Range("D6").Value
+    wsBD.Cells(fila, 4).Value = wsReg.Range("D7").Value
+    wsBD.Cells(fila, 5).Value = wsReg.Range("D8").Value
+    wsBD.Cells(fila, 6).Value = wsReg.Range("D9").Value
+    wsBD.Cells(fila, 7).Value = wsReg.Range("D10").Value
+    wsBD.Cells(fila, 8).Value = wsReg.Range("D11").Value
+    wsBD.Cells(fila, 9).Value = wsReg.Range("D12").Value
+    wsBD.Cells(fila, 1).Locked = True
+
+    wsBD.Protect Password:=pwd, DrawingObjects:=True, Contents:=True, Scenarios:=True
+
+    wsReg.Range("D5:D12").ClearContents
+    wsReg.Range("F3").Value = "Registrado con exito - " & Format(Now(), "dd/mm/yyyy hh:mm")
+    wsReg.Range("F3").Font.Color = RGB(0, 130, 0)
+    Exit Sub
+
+ErrorHandler:
+    On Error Resume Next
+    wsBD.Protect Password:=pwd, DrawingObjects:=True, Contents:=True, Scenarios:=True
+    wsReg.Range("F3").Value = "Error al registrar: " & Err.Description
+    wsReg.Range("F3").Font.Color = RGB(200, 0, 0)
+End Sub
+
+Sub RegistrarFalla_Veronica()
+    Dim wsReg As Worksheet, wsBD As Worksheet
+    Dim pwd As String
+    Dim fila As Long
+
+    Set wsReg = ThisWorkbook.Sheets("REGISTRO VERONICA")
+    Set wsBD = ThisWorkbook.Sheets("BASE DE DATOS VERONICA")
+    pwd = "Veronica2026"
+
+    If Trim(wsReg.Range("D7").Value) = "" And Trim(wsReg.Range("D8").Value) = "" Then
+        wsReg.Range("F3").Value = "Falta NIP o No. de Parte."
+        wsReg.Range("F3").Font.Color = RGB(200, 0, 0)
+        Exit Sub
+    End If
+
+    On Error GoTo ErrorHandler
+    wsBD.Unprotect Password:=pwd
+
+    fila = wsBD.Cells(wsBD.Rows.Count, "A").End(xlUp).Row + 1
+    If fila < 5 Then fila = 5
+
+    wsBD.Cells(fila, 1).Value = Now()
+    wsBD.Cells(fila, 1).NumberFormat = "dd/mm/yyyy hh:mm"
+    wsBD.Cells(fila, 2).Value = wsReg.Range("D5").Value
+    wsBD.Cells(fila, 3).Value = wsReg.Range("D6").Value
+    wsBD.Cells(fila, 4).Value = wsReg.Range("D7").Value
+    wsBD.Cells(fila, 5).Value = wsReg.Range("D8").Value
+    wsBD.Cells(fila, 6).Value = wsReg.Range("D9").Value
+    wsBD.Cells(fila, 7).Value = wsReg.Range("D10").Value
+    wsBD.Cells(fila, 8).Value = wsReg.Range("D11").Value
+    wsBD.Cells(fila, 9).Value = wsReg.Range("D12").Value
+    wsBD.Cells(fila, 1).Locked = True
+
+    wsBD.Protect Password:=pwd, DrawingObjects:=True, Contents:=True, Scenarios:=True
+
+    wsReg.Range("D5:D12").ClearContents
+    wsReg.Range("F3").Value = "Registrado con exito - " & Format(Now(), "dd/mm/yyyy hh:mm")
+    wsReg.Range("F3").Font.Color = RGB(0, 130, 0)
+    Exit Sub
+
+ErrorHandler:
+    On Error Resume Next
+    wsBD.Protect Password:=pwd, DrawingObjects:=True, Contents:=True, Scenarios:=True
+    wsReg.Range("F3").Value = "Error al registrar: " & Err.Description
+    wsReg.Range("F3").Font.Color = RGB(200, 0, 0)
+End Sub
